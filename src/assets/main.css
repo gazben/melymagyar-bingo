@@ -1,0 +1,21 @@
+html{
+    -ms-content-zooming: none;
+    -ms-touch-action: pan-x pan-y;
+    margin:0;
+    padding:0;
+    height:100%;
+    margin-bottom: 0px;
+    background-color: #f50000;
+    background: url('./bg.png') 0px 0px repeat;
+}
+body{
+    background-color: #f50000;
+    margin:0;
+    padding:0;
+    width:100%;
+    background: url('./bg.png') 0px 0px repeat;
+    display:block;
+    overflow:auto;
+    min-height: 100%;
+    margin-bottom: 0px;
+}
