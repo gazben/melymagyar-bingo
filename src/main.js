@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import VueAnalytics from 'vue-analytics'
+
 import './assets/main.css'
 
 import Vue from 'vue'
@@ -11,7 +13,15 @@ import VueLodash from 'vue-lodash'
 
 Vue.use(VueLodash)
 Vue.use(BootstrapVue)
+
 Vue.config.productionTip = false
+
+if(process.env.NODE_ENV === 'production') {
+  Vue.use(VueAnalytics, {
+    id: 'UA-112064201-3',
+    checkDuplicatedScript: true
+  })
+}
 
 new Vue({
   router,

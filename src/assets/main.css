@@ -1,75 +1,14 @@
 html{
-    -ms-content-zooming: none;
-    -ms-touch-action: pan-x pan-y;
-    margin:0;
-    padding:0;
     height:100%;
-    margin-bottom: 0px;
     background-color: #ab0000;
     background: url('./bg.png') 0px 0px repeat;
 }
 body{
     background-color: #ab0000;
-    margin:0;
-    padding:0;
-    width:100%;
     background: url('./bg.png') 0px 0px repeat;
-    display:block;
-    overflow:auto;
-    min-height: 100%;
-    margin-bottom: 0px;
 }
-#header{
-    position:absolute;
-    top:0px;
-    left:0px;
-    right:0px;
-    width:100%;
-    height:50px;
-    background-color:rgba(0,0,0,.66);
-    background-image: linear-gradient(to top,rgba(180,180,180,.5),rgba(255,255,255,0));
-    text-align:center;
-    z-index:1;
-    border-bottom:4px solid rgba(0,0,0,0.8);
-}
-#header p{
-    padding:14px;
-    font-size:22px;
-    color:#eeeeee;
-    font-family:"Times New Roman", Times, serif;
-    font-style:italic;
-    font-weight:bold;
-    margin:auto;
-    max-width:50%;
-    white-space: nowrap;
-}
-#header p:after, #header p:before{
-    content:"";
-    width:40px;
-    height:40px;
-    background-image:url('/web/20160817191404im_/http://unnepiebed.com/img/small.png');
-    background-repeat:no-repeat;
-    display:inline-block;
-    padding:0;
-    margin-top:-40px;
-}
-#social{
-    position:absolute;
-    top:15px;
-    right:20px;
-    display:block;
-    z-index:2;
-}
-#menu{
-    position:absolute;
-    top:15px;
-    left:20px;
-    display:block;
-    z-index:2;
-}
+
 #content{
-    position:relative;
-    margin:auto;
     width:100%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -149,29 +88,4 @@ body{
     25%  {border-color:#ee0000;}
     50%  {border-color:#ff9911;}
     100% {border-color:#ff2222;}
-}
-#reset{
-    margin:auto;
-    text-align:center;
-    border-top:2px solid #eeeeee;
-    padding:22px;
-    width:90%;
-    z-index:3;
-    position:relative;
-    display:none;
-}
-#reset p{
-    border:1px solid #eeeeee;
-    background-color:#cc0000;
-    border-radius:2px;
-    color:#eeeeee;
-    font-weight:bold;
-    padding:5px;
-    margin:auto;
-    text-align:center;
-    cursor:pointer;
-    width:100px;
-}
-#reset p:hover{
-    background-color:#ee0000;
 }
