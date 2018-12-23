@@ -5,11 +5,11 @@ html{
     padding:0;
     height:100%;
     margin-bottom: 0px;
-    background-color: #f50000;
+    background-color: #ab0000;
     background: url('./bg.png') 0px 0px repeat;
 }
 body{
-    background-color: #f50000;
+    background-color: #ab0000;
     margin:0;
     padding:0;
     width:100%;
@@ -18,4 +18,160 @@ body{
     overflow:auto;
     min-height: 100%;
     margin-bottom: 0px;
+}
+#header{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:50px;
+    background-color:rgba(0,0,0,.66);
+    background-image: linear-gradient(to top,rgba(180,180,180,.5),rgba(255,255,255,0));
+    text-align:center;
+    z-index:1;
+    border-bottom:4px solid rgba(0,0,0,0.8);
+}
+#header p{
+    padding:14px;
+    font-size:22px;
+    color:#eeeeee;
+    font-family:"Times New Roman", Times, serif;
+    font-style:italic;
+    font-weight:bold;
+    margin:auto;
+    max-width:50%;
+    white-space: nowrap;
+}
+#header p:after, #header p:before{
+    content:"";
+    width:40px;
+    height:40px;
+    background-image:url('/web/20160817191404im_/http://unnepiebed.com/img/small.png');
+    background-repeat:no-repeat;
+    display:inline-block;
+    padding:0;
+    margin-top:-40px;
+}
+#social{
+    position:absolute;
+    top:15px;
+    right:20px;
+    display:block;
+    z-index:2;
+}
+#menu{
+    position:absolute;
+    top:15px;
+    left:20px;
+    display:block;
+    z-index:2;
+}
+#content{
+    position:relative;
+    margin:auto;
+    width:100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding:0px;
+    display:block;
+    margin-top: 50px;
+}
+
+#content:after{
+    content:'';
+    position:fixed;
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+    height:100%;
+    display:block;
+    background-image: linear-gradient(to top right,rgba(100,0,0,.7),rgba(250,0,0,.25));
+    background-size: cover;
+    z-index:0;
+}
+
+#content span{
+    position:relative;
+    margin:12px;
+    z-index:1;
+}
+#content table{
+    position:relative;
+    display:table;
+    margin:auto;
+    border-spacing: 5px;
+    border-collapse: separate;
+    z-index:2;
+}
+#content table tr{
+    min-height:20%;
+}
+#content table td{
+    min-width:20%;
+    cursor:pointer;
+    text-align:center;
+    background-color:rgba(255,255,255,.95);
+    background-image: linear-gradient(to top,rgba(180,180,180,.8),rgba(255,255,255,.25));
+    border:5px solid #cc0000;
+    font-weight:bold;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size:18px;
+    word-wrap: break-word;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding:3px;
+    color:#333333;
+}
+#content table td:hover{
+    border:5px solid #ee0000;
+    color:#111111;
+}
+#content table td.active{
+    background-color:rgba(220,220,220,.9);
+}
+#content table td.active.bingo{
+    background-color:rgba(170,170,170,.85);
+    border-color:#ff2222;
+    animation-name: bingo;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes bingo {
+    0%   {border-color:#ff2222;}
+    25%  {border-color:#ee0000;}
+    50%  {border-color:#ff9911;}
+    100% {border-color:#ff2222;}
+}
+#reset{
+    margin:auto;
+    text-align:center;
+    border-top:2px solid #eeeeee;
+    padding:22px;
+    width:90%;
+    z-index:3;
+    position:relative;
+    display:none;
+}
+#reset p{
+    border:1px solid #eeeeee;
+    background-color:#cc0000;
+    border-radius:2px;
+    color:#eeeeee;
+    font-weight:bold;
+    padding:5px;
+    margin:auto;
+    text-align:center;
+    cursor:pointer;
+    width:100px;
+}
+#reset p:hover{
+    background-color:#ee0000;
 }
