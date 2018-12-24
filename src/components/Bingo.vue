@@ -13,7 +13,7 @@
         </table>
 
         <div class="align-center" style="margin-top: 50px">
-            <button id="reset" style="display: block;" @click="newGame">
+            <button class="reset" style="display: block;" @click="newGame">
                 Új ebéd!
             </button>
         </div>
@@ -40,19 +40,35 @@
           },
           answerClick(element) {
               element.count++
+
+              if(this.isBingo) {
+                  alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
+              }
           },
           newGame() {
               const bingoAnswers = BingoElements.answers
-              this.answers = this._.shuffle(bingoAnswers).slice(0,25).map((element) => {
+              this.answers = this._.shuffle(bingoAnswers).slice(0,this.tableHeight * this.tableWidth).map((element) => {
                   return { count: 0, answer: element }
               })
           },
+        },
+        computed: {
+            isBingo() {
+                let bingo = true
+
+                this.answers.forEach((elem) => {
+                    if(elem.count === 0)
+                        bingo = false
+                })
+
+                return bingo
+            }
         }
     }
 </script>
 
 <style>
-    #reset{
+    .reset{
         margin:auto;
         text-align:center;
         z-index:3;
@@ -68,7 +84,7 @@
         width:100px;
     }
 
-    #reset:hover{
+    .reset:hover{
         background-color:#ee0000;
     }
 </style>
