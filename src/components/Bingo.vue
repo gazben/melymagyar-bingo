@@ -29,7 +29,7 @@
         },
         data() {
           return {
-              tableWidth: 4,
+              tableWidth: 5,
               tableHeight: 5,
               answers: [],
           }
