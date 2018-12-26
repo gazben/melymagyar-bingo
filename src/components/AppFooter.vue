@@ -5,7 +5,9 @@
                 <div class="col-md-6">
                     <ul>
                         <li><strong>Made with: love && zsold</strong></li>
-                        <li>Az eredeti unnepiebed.com alapján aminek lejárt a domainje :(</li>
+                        <li>
+                            Az oldal az eredeti unnepiebed.com alapján készült de a készítők nincsenek kapcsolatban egymással!
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6">
