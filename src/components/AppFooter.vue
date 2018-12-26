@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-6">
                     <ul>
-                        <li>Aki ért a CSS-hez írjon.</li>
+                        <li>Köszönöm a segítséget a CSS-el. Most mobilon lista jelenik meg táblázat helyett.</li>
                         <li><small><a href="https://github.com/gazben/melymagyar-bingo">Github repo</a></small></li>
                     </ul>
                 </div>
