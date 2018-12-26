@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-content">
     <bingo></bingo>
   </div>
 </template>

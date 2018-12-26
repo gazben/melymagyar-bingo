@@ -1,91 +1,190 @@
-html{
-    height:100%;
-    background-color: #ab0000;
-    background: url('./bg.png') 0px 0px repeat;
-}
-body{
-    background-color: #ab0000;
-    background: url('./bg.png') 0px 0px repeat;
+body {
+  height: 100%;
+  background-color: #ab0000;
+  background: url('bg.png') 192px 192px repeat;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-#content{
-    width:100%;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding:0px;
-    display:block;
-    margin-top: 50px;
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-#content:after{
-    content:'';
-    position:fixed;
-    left:0px;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    width:100%;
-    height:100%;
-    display:block;
-    background-image: linear-gradient(to top right,rgba(100,0,0,.7),rgba(250,0,0,.25));
-    background-size: cover;
-    z-index:0;
+#app > .app-content {
+  flex: 1 0 auto;
 }
 
-#content span{
-    position:relative;
-    margin:12px;
-    z-index:1;
+.header {
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+  background-color: rgba(0, 0, 0, .66);
+  background-image: linear-gradient(to top, rgba(180, 180, 180, .5), rgba(255, 255, 255, 0));
+  text-align: center;
+  z-index: 1;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.8);
 }
-#content table{
-    position:relative;
-    display:table;
-    margin:auto;
-    border-spacing: 5px;
-    border-collapse: separate;
-    z-index:2;
+
+.header p {
+  padding: 6px;
+  font-size: 22px;
+  color: #eeeeee;
+  font-style: italic;
+  font-weight: bold;
+  margin: 0;
 }
-#content table tr{
-    min-height:20%;
+
+.bingo-content {
+  width: 100%;
+  padding: 0px;
+  display: block;
+  margin-top: 50px;
 }
-#content table td{
-    min-width:20%;
-    cursor:pointer;
-    text-align:center;
-    background-color:rgba(255,255,255,.95);
-    background-image: linear-gradient(to top,rgba(180,180,180,.8),rgba(255,255,255,.25));
-    border:5px solid #cc0000;
-    font-weight:bold;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size:18px;
-    word-wrap: break-word;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-    padding:3px;
-    color:#333333;
+
+.bingo-content::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: linear-gradient(to top right, rgba(100, 0, 0, .7), rgba(250, 0, 0, .25));
+  background-size: cover;
+  z-index: 0;
 }
-#content table td:hover{
-    border:5px solid #ee0000;
-    color:#111111;
+
+.bingo-cards-wrapper {
+  padding: 5px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
 }
-#content table td.active{
-    background-color:rgba(220,220,220,.9);
+
+.bingo-grid-row {
+  position: relative;
+  display: flex;
 }
-#content table td.active.bingo{
-    background-color:rgba(170,170,170,.85);
-    border-color:#ff2222;
-    animation-name: bingo;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+
+.bingo-card {
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  background-color: hsla(0, 0%, 100%, .95);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(hsla(0, 0%, 70.6%, .8)), to(hsla(0, 0%, 100%, .25)));
+  background-image: linear-gradient(0deg, hsla(0, 0%, 70.6%, .8), hsla(0, 0%, 100%, .25));
+  border: 5px solid #c00;
+  font-weight: 700;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+  font-size: 18px;
+  word-wrap: break-word;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  padding: 5px 10px;
+  color: #333;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.bingo-card:hover {
+  border: 5px solid #e00;
+  color: #111;
+}
+
+.bingo-card.active {
+  background-color: hsla(0, 0%, 66.7%, .85);
+  border-color: #f22;
+  animation-name: bingo;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.btn-bingo {
+  margin: auto;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  display: none;
+  border: 1px solid #eeeeee;
+  background-color: #cc0000;
+  border-radius: 2px;
+  color: #eeeeee;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
+  width: 100px;
+  outline: none !important;
+}
+
+.btn-bingo:hover {
+  background-color: #ee0000;
+}
+
+.btn-bingo.active {
+  display: block;
+}
+
+.notouch {
+  user-select: none;
+}
+
+.reset {
+  margin: 50px 0;
+}
+
 @keyframes bingo {
-    0%   {border-color:#ff2222;}
-    25%  {border-color:#ee0000;}
-    50%  {border-color:#ff9911;}
-    100% {border-color:#ff2222;}
+  0% {
+    border-color: #ff2222;
+  }
+
+  25% {
+    border-color: #ee0000;
+  }
+
+  50% {
+    border-color: #ff9911;
+  }
+
+  100% {
+    border-color: #ff2222;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer ul:first-of-type {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .bingo-grid-row {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .header p {
+    font-size: 20px;
+  }
 }
