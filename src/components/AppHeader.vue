@@ -1,6 +1,6 @@
 <template>
     <div id="header">
-        <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé</p>
+        <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2019</p>
     </div>
 </template>
 
