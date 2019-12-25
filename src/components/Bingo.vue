@@ -42,9 +42,12 @@ export default {
         alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
       }
     },
+    shuffle(arr) {
+      return arr.sort(() => Math.random() - 0.5);
+    },
     newGame() {
       const bingoAnswers = BingoElements.answers;
-      this.answers = this._.shuffle(bingoAnswers).slice(0, this.tableHeight * this.tableWidth).map((element) => {
+      this.answers = this.shuffle(bingoAnswers).slice(0, this.tableHeight * this.tableWidth).map((element) => {
         return {
           count: 0,
           answer: element
