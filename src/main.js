@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import VueLodash from 'vue-lodash'
-
-Vue.use(VueLodash)
 
 Vue.config.productionTip = false
 
