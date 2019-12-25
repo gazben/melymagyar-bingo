@@ -35,14 +35,14 @@ export default {
       return element.count > 0
     },
     answerClick(element) {
-      element.count++
+      element.count++;
 
       if (this.isBingo) {
         alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
       }
     },
     newGame() {
-      const bingoAnswers = BingoElements.answers
+      const bingoAnswers = BingoElements.answers;
       this.answers = this._.shuffle(bingoAnswers).slice(0, this.tableHeight * this.tableWidth).map((element) => {
         return {
           count: 0,
@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     isBingo() {
-      const answers = this.answers.filter((a) => a.count === 0)
+      const answers = this.answers.filter((a) => a.count === 0);
       return !answers.length;
     }
   }
