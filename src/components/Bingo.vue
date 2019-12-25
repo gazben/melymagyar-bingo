@@ -53,15 +53,8 @@ export default {
   },
   computed: {
     isBingo() {
-      let bingo = true
-
-      this.answers.forEach((elem) => {
-        if (elem.count === 0) {
-          bingo = false
-        }
-      })
-
-      return bingo
+      const answers = this.answers.filter((a) => a.count === 0)
+      return !answers.length;
     }
   }
 }
