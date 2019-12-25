@@ -1,18 +1,19 @@
 <template>
-  <div id="content" class="bingo-content notouch py-5">
+  <div class="notouch py-5">
     <div class="bingo-cards-wrapper" v-if="answers.length > 0">
       <div class="bingo-grid-row" v-bind:key="y" v-for="y in tableHeight">
-        <div class="bingo-card" @click="answerClick(answers[(y - 1)*tableHeight + (x-1)])" :class="isActive(answers[(y - 1)*tableHeight + (x-1)]) ? 'active' : ''" v-bind:key="x" v-for="x in tableWidth">
-          <div class="bingo-card-content">{{ answers[(y - 1)*tableHeight + (x-1)].answer }}</div>
+        <div class="bingo-card"
+             @click="answerClick(answers[(y - 1)*tableHeight + (x-1)])"
+             :class="isActive(answers[(y - 1)*tableHeight + (x-1)]) ? 'active' : ''"
+             v-bind:key="x"
+             v-for="x in tableWidth">
+          <p class="mb-0">{{ answers[(y - 1)*tableHeight + (x-1)].answer }}</p>
         </div>
       </div>
     </div>
-
-    <div class="mt-5">
-      <button type="button" class="btn btn-bingo mx-auto d-block" @click="newGame">
-        Új ebéd!
-      </button>
-    </div>
+    <button type="button" class="btn btn-bingo mx-auto d-block mt-5" @click="newGame">
+      Új ebéd!
+    </button>
   </div>
 </template>
 
