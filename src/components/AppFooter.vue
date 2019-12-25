@@ -1,5 +1,5 @@
 <template>
-    <div id="footer">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -12,15 +12,15 @@
                 </div>
                 <div class="col-md-6">
                     <p class="mb-0">Köszönöm a segítséget a CSS-el. Most mobilon lista jelenik meg táblázat helyett.</p>
-                    <p><small><a href="https://github.com/gazben/melymagyar-bingo">Github repo</a></small></p>
+                    <small><a href="https://github.com/gazben/melymagyar-bingo" target="_blank">Github repo</a></small>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <style>
-#footer {
+footer {
   background-color: #790000;
   color: #fff;
   padding: 20px 0;
