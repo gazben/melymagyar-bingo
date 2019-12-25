@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="reset mt-5">
+    <div class="mt-5">
       <button type="button" class="btn btn-bingo mx-auto d-block" @click="newGame">
         Új ebéd!
       </button>
@@ -35,14 +35,14 @@ export default {
       return element.count > 0
     },
     answerClick(element) {
-      element.count++
+      element.count++;
 
       if (this.isBingo) {
         alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
       }
     },
     newGame() {
-      const bingoAnswers = BingoElements.answers
+      const bingoAnswers = BingoElements.answers;
       this.answers = this._.shuffle(bingoAnswers).slice(0, this.tableHeight * this.tableWidth).map((element) => {
         return {
           count: 0,
@@ -53,15 +53,8 @@ export default {
   },
   computed: {
     isBingo() {
-      let bingo = true
-
-      this.answers.forEach((elem) => {
-        if (elem.count === 0) {
-          bingo = false
-        }
-      })
-
-      return bingo
+      const answers = this.answers.filter((a) => a.count === 0);
+      return !answers.length;
     }
   }
 }
@@ -71,13 +64,9 @@ export default {
 .bingo-cards-wrapper {
   padding: 5px;
   margin: 0 auto;
-  z-index: 2;
-  position: relative;
-  overflow: hidden;
 }
 
 .bingo-grid-row {
-  position: relative;
   display: flex;
 }
 
@@ -85,7 +74,6 @@ export default {
   margin: 5px;
   cursor: pointer;
   text-align: center;
-  position: relative;
   background-color: hsla(0, 0%, 100%, 0.95);
   background-image: linear-gradient(0deg, hsla(0, 0%, 70.6%, .8), hsla(0, 0%, 100%, 0.25));
   border: 5px solid #c00;
@@ -115,10 +103,6 @@ export default {
   animation-name: bingo;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-}
-
-.reset {
-  z-index: 3;
 }
 
 .btn-bingo {
@@ -157,7 +141,7 @@ export default {
 
 @media screen and (max-width: 767px) {
   .bingo-grid-row {
-    display: block !important;
+    display: block;
   }
 }
 </style>

@@ -20,7 +20,6 @@
 
 <style>
 body {
-  height: 100%;
   background-color: #ab0000;
   background: url('./assets/bg.png') 192px 192px repeat;
 }
