@@ -1,7 +1,14 @@
 <template>
-    <header>
-        <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2019</p>
-    </header>
+  <header>
+    <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2020</p>
+    <p class="mb-0">
+      <small>
+        <a style="color: white; text-decoration: none" target="_blank" href="https://koronavirus.gov.hu/cikkek/operativ-torzs-megjelent-karacsonyi-idoszakra-vonatkozo-kormanyrendelet">
+          Szigorúan 10 fő alatt (14 év alatti kiskorú személyek nélkül)
+        </a>
+      </small>
+    </p>
+  </header>
 </template>
 
 <style>
