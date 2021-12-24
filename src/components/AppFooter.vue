@@ -11,7 +11,7 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="mb-0">Köszönöm a segítséget a CSS-el. Most mobilon lista jelenik meg táblázat helyett.</p>
+                    <p class="mb-0">Köszönöm a segítséget a CSS-szel. Most mobilon lista jelenik meg táblázat helyett.</p>
                     <p class="mb-0"><a href="https://github.com/gazben/melymagyar-bingo" target="_blank"><strong>Github repo</strong></a></p>
                     <p><a href="https://coub.com/view/2yzkpu" target="_blank"><strong>Magyarország előre megy, nem hátra!</strong></a></p>
                 </div>
