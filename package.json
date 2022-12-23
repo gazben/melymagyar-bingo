@@ -10,18 +10,16 @@
   "dependencies": {
     "bootstrap": "^4.5.3",
     "lodash": "^4.17.20",
-    "vue": "^2.6.12",
+    "vue": "^2.7.14",
     "vue-analytics": "^5.22.1",
     "vue-router": "^3.4.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.9",
-    "@vue/cli-plugin-eslint": "^4.5.9",
-    "@vue/cli-service": "^4.5.9",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.2.3",
-    "vue-template-compiler": "^2.6.12"
+    "@babel/eslint-parser": "^7.19.1",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "eslint-plugin-vue": "^9.8.0"
   },
   "eslintConfig": {
     "root": true,
@@ -32,9 +30,11 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "vue/multi-word-component-names": "off"
+    },
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     }
   },
   "postcss": {
