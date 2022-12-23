@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2021</p>
+    <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2022</p>
   </header>
 </template>
 
