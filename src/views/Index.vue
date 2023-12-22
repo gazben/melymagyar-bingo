@@ -1,18 +1,11 @@
 <template>
   <div class="app-content">
-    <bingo></bingo>
+    <Bingo></Bingo>
   </div>
 </template>
 
-<script>
-import Bingo from '../components/Bingo'
-
-export default {
-  name: 'home',
-  components: {
-    Bingo,
-  }
-}
+<script setup>
+import Bingo from '@/components/Bingo'
 </script>
 
 <style>
