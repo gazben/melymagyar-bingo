@@ -6,7 +6,7 @@
 
 <style>
 header {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   background-color: rgba(0, 0, 0, 0.66);
   background-image: linear-gradient(to top, rgba(180, 180, 180, 0.5), rgba(255, 255, 255, 0));
   text-align: center;

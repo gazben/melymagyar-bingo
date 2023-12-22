@@ -1,21 +1,14 @@
 <template>
   <div id="app">
     <AppHeader></AppHeader>
-    <router-view/>
+    <router-view />
     <AppFooter></AppFooter>
   </div>
 </template>
 
-<script>
-  import AppHeader from './components/AppHeader'
-  import AppFooter from './components/AppFooter'
-
-  export default {
-    components: {
-      AppHeader,
-      AppFooter
-    }
-  }
+<script setup>
+import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
 </script>
 
 <style>
@@ -38,4 +31,3 @@ body {
   flex: 1 0 auto;
 }
 </style>
-
