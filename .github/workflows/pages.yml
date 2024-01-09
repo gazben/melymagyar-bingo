@@ -24,6 +24,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: './dist'
   deploy:
     environment:
       name: github-pages
