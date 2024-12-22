@@ -3,11 +3,11 @@
     <div class="bingo-cards-wrapper" v-if="answers.length > 0">
       <div class="bingo-grid-row" v-bind:key="y" v-for="y in tableHeight">
         <div
-          class="bingo-card"
-          @click="answerClick(answers[(y - 1) * tableHeight + (x - 1)])"
-          :class="isActive(answers[(y - 1) * tableHeight + (x - 1)]) ? 'active' : ''"
-          v-bind:key="x"
-          v-for="x in tableWidth"
+            class="bingo-card"
+            @click="answerClick(answers[(y - 1) * tableHeight + (x - 1)])"
+            :class="isActive(answers[(y - 1) * tableHeight + (x - 1)]) ? 'active' : ''"
+            v-bind:key="x"
+            v-for="x in tableWidth"
         >
           <p class="mb-0">{{ answers[(y - 1) * tableHeight + (x - 1)].answer }}</p>
         </div>
@@ -19,51 +19,74 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BingoElements from '@/assets/items'
+import BingoElements2018 from '@/assets/archive/2018.json'
+import BingoElements2019 from '@/assets/archive/2019.json'
+import BingoElements2020 from '@/assets/archive/2020.json'
+import BingoElements2021 from '@/assets/archive/2021.json'
+import BingoElements2022 from '@/assets/archive/2022.json'
+import BingoElements2023 from '@/assets/archive/2023.json'
 import shuffle from 'lodash/shuffle'
+import {computed, onMounted, ref} from "vue";
+import {useRoute} from "vue-router";
 
-export default {
-  mounted() {
-    this.newGame()
-  },
-  data() {
-    return {
-      tableWidth: 5,
-      tableHeight: 5,
-      answers: []
-    }
-  },
-  methods: {
-    isActive(element) {
-      return element.count > 0
-    },
-    answerClick(element) {
-      element.count++
+const route = useRoute()
+const tableWidth = ref(5)
+const tableHeight = ref(5)
+const answers = ref([])
 
-      if (this.isBingo) {
-        alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
-      }
-    },
-    newGame() {
-      const bingoAnswers = BingoElements.answers
-      this.answers = shuffle(bingoAnswers)
-        .slice(0, this.tableHeight * this.tableWidth)
-        .map((element) => {
-          return {
-            count: 0,
-            answer: element
-          }
-        })
-    }
-  },
-  computed: {
-    isBingo() {
-      const answers = this.answers.filter((a) => a.count === 0)
-      return !answers.length
-    }
+onMounted(() => {
+  newGame(Number(route.params.year ?? 2024))
+})
+
+function isActive(element) {
+  return element.count > 0
+}
+
+function answerClick(element) {
+  element.count++
+
+  if (isBingo.value) {
+    alert('Egészségetekre, hajrá Magyarország, hajrá Magyarok!')
   }
 }
+
+function bingoEntries(year) {
+  switch (year) {
+    case 2018:
+      return BingoElements2018.answers
+    case 2019:
+      return BingoElements2019.answers
+    case 2020:
+      return BingoElements2020.answers
+    case 2021:
+      return BingoElements2021.answers
+    case 2022:
+      return BingoElements2022.answers
+    case 2023:
+      return BingoElements2023.answers
+    default:
+      return BingoElements.answers
+  }
+}
+
+function newGame(year) {
+  const bingoAnswers = bingoEntries(year)
+
+  answers.value = shuffle(bingoAnswers)
+      .slice(0, tableHeight.value * tableWidth.value)
+      .map((element) => {
+        return {
+          count: 0,
+          answer: element
+        }
+      })
+}
+
+const isBingo = computed(() => {
+  return !answers.value.filter((a) => a.count === 0).length
+})
 </script>
 
 <style>
@@ -84,10 +107,9 @@ export default {
   background-image: linear-gradient(0deg, hsla(0, 0%, 70.6%, 0.8), hsla(0, 0%, 100%, 0.25));
   border: 5px solid #c00;
   font-weight: bold;
-  font-family:
-    Lucida Sans Unicode,
-    Lucida Grande,
-    sans-serif;
+  font-family: Lucida Sans Unicode,
+  Lucida Grande,
+  sans-serif;
   font-size: 18px;
   word-wrap: break-word;
   background-repeat: no-repeat;

@@ -7,7 +7,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: { archive: false },
+    },
+    {
+      path: '/archivum/:year',
+      component: Home,
+      meta: { archive: true },
     }
   ]
 })

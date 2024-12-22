@@ -1,8 +1,22 @@
 <template>
   <header>
-    <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - 2024</p>
+    <p class="mb-0">Ünnepi Bingo az Ünnepi Ebéd mellé - {{ year }}</p>
   </header>
 </template>
+
+<script setup>
+import { useRoute } from 'vue-router';
+import { ref, watch } from 'vue';
+
+const route = useRoute()
+const year = ref(route.meta.archive ? '' : '2024')
+
+watch(
+() => route.params.year,
+(newValue) => {
+  year.value = newValue
+})
+</script>
 
 <style>
 header {
