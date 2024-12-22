@@ -66,13 +66,22 @@ function bingoEntries(year) {
       return BingoElements2022.answers
     case 2023:
       return BingoElements2023.answers
-    default:
+    case 2024:
       return BingoElements.answers
+    default:
+      return []
   }
 }
 
 function newGame(year) {
   const bingoAnswers = bingoEntries(year)
+
+  if (!bingoAnswers.length) {
+    answers.value = []
+    alert('Itt most nincs bingo :(')
+
+    return
+  }
 
   answers.value = shuffle(bingoAnswers)
       .slice(0, tableHeight.value * tableWidth.value)
