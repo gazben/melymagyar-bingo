@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-bingo mx-auto d-block mt-5" @click="newGame">
+    <button type="button" class="btn btn-bingo mx-auto d-block mt-5" @click="newGame(null)">
       Új ebéd!
     </button>
   </div>
@@ -37,7 +37,7 @@ const tableHeight = ref(5)
 const answers = ref([])
 
 onMounted(() => {
-  newGame(Number(route.params.year ?? 2024))
+  newGame(route.params.year)
 })
 
 function isActive(element) {
@@ -74,7 +74,7 @@ function bingoEntries(year) {
 }
 
 function newGame(year) {
-  const bingoAnswers = bingoEntries(year)
+  const bingoAnswers = bingoEntries(Number(year ?? 2024))
 
   if (!bingoAnswers.length) {
     answers.value = []
