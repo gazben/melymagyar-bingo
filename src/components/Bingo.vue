@@ -27,6 +27,7 @@ import BingoElements2020 from '@/assets/archive/2020.json'
 import BingoElements2021 from '@/assets/archive/2021.json'
 import BingoElements2022 from '@/assets/archive/2022.json'
 import BingoElements2023 from '@/assets/archive/2023.json'
+import BingoElements2024 from '@/assets/archive/2024.json'
 import shuffle from 'lodash/shuffle'
 import {computed, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
@@ -67,6 +68,8 @@ function bingoEntries(year) {
     case 2023:
       return BingoElements2023.answers
     case 2024:
+      return BingoElements2024.answers
+    case 2025:
       return BingoElements.answers
     default:
       return []
@@ -74,7 +77,7 @@ function bingoEntries(year) {
 }
 
 function newGame(year) {
-  const bingoAnswers = bingoEntries(Number(year ?? 2024))
+  const bingoAnswers = bingoEntries(Number(year ?? new Date().getFullYear()))
 
   if (!bingoAnswers.length) {
     answers.value = []
