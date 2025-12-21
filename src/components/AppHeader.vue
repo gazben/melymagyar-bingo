@@ -9,7 +9,7 @@ import { useRoute } from 'vue-router';
 import { ref, watch } from 'vue';
 
 const route = useRoute()
-const year = ref(route.meta.archive ? '' : '2024')
+const year = ref(route.meta.archive ? '' : new Date().getFullYear())
 
 watch(
 () => route.params.year,
