@@ -8,12 +8,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
-      meta: { archive: false },
+      meta: { archive: false }
     },
     {
       path: '/archivum/:year',
       component: Home,
-      meta: { archive: true },
+      meta: { archive: true }
     }
   ]
 })

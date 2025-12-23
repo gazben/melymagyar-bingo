@@ -3,11 +3,11 @@
     <div class="bingo-cards-wrapper" v-if="answers.length > 0">
       <div class="bingo-grid-row" v-bind:key="y" v-for="y in tableHeight">
         <div
-            class="bingo-card"
-            @click="answerClick(answers[(y - 1) * tableHeight + (x - 1)])"
-            :class="isActive(answers[(y - 1) * tableHeight + (x - 1)]) ? 'active' : ''"
-            v-bind:key="x"
-            v-for="x in tableWidth"
+          class="bingo-card"
+          @click="answerClick(answers[(y - 1) * tableHeight + (x - 1)])"
+          :class="isActive(answers[(y - 1) * tableHeight + (x - 1)]) ? 'active' : ''"
+          v-bind:key="x"
+          v-for="x in tableWidth"
         >
           <p class="mb-0">{{ answers[(y - 1) * tableHeight + (x - 1)].answer }}</p>
         </div>
@@ -29,8 +29,8 @@ import BingoElements2022 from '@/assets/archive/2022.json'
 import BingoElements2023 from '@/assets/archive/2023.json'
 import BingoElements2024 from '@/assets/archive/2024.json'
 import shuffle from 'lodash/shuffle'
-import {computed, onMounted, ref} from "vue";
-import {useRoute} from "vue-router";
+import { computed, onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const tableWidth = ref(5)
@@ -87,13 +87,13 @@ function newGame(year) {
   }
 
   answers.value = shuffle(bingoAnswers)
-      .slice(0, tableHeight.value * tableWidth.value)
-      .map((element) => {
-        return {
-          count: 0,
-          answer: element
-        }
-      })
+    .slice(0, tableHeight.value * tableWidth.value)
+    .map((element) => {
+      return {
+        count: 0,
+        answer: element
+      }
+    })
 }
 
 const isBingo = computed(() => {
@@ -119,9 +119,10 @@ const isBingo = computed(() => {
   background-image: linear-gradient(0deg, hsla(0, 0%, 70.6%, 0.8), hsla(0, 0%, 100%, 0.25));
   border: 5px solid #c00;
   font-weight: bold;
-  font-family: Lucida Sans Unicode,
-  Lucida Grande,
-  sans-serif;
+  font-family:
+    Lucida Sans Unicode,
+    Lucida Grande,
+    sans-serif;
   font-size: 18px;
   word-wrap: break-word;
   background-repeat: no-repeat;
