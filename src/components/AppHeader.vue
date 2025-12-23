@@ -5,17 +5,18 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
-import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 
 const route = useRoute()
 const year = ref(route.meta.archive ? '' : new Date().getFullYear())
 
 watch(
-() => route.params.year,
-(newValue) => {
-  year.value = newValue
-})
+  () => route.params.year,
+  (newValue) => {
+    year.value = newValue
+  }
+)
 </script>
 
 <style>
